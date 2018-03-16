@@ -217,12 +217,12 @@ exports.playCmd = rl => {
 				if (answer.toLowerCase().trim() === quiz.answer.toLowerCase()){
 					score++;
 					log(`CORRECTO - Lleva ${score} aciertos` );
-					Sequelize.Promise.resolve(playOne());
+					resolve(playOne());
 				
 				} else {
 					log('INCORRECTO');
 					log(`Fin del juego. Aciertos: ${score}`)
-					Sequelize.Promise.resolve();
+					resolve();
 					biglog(score, 'magenta');
 				}
 			})		
